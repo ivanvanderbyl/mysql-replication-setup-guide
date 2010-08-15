@@ -5,8 +5,8 @@ This guide assumes you have two server instances, we're using two AussieHQ Dedic
 with the same MySQL root password on both machines.
 
 In this article, I will refer to these servers as having the following private network IPs:
-server1: 10.0.0.10
-server2: 10.0.0.20
+* server1: 10.0.0.10
+* server2: 10.0.0.20
 
 Configuring The Master
 ----------------------

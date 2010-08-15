@@ -2,7 +2,6 @@ My notes on setting up MySQL database replication on two servers (master/slave)
 ===============================================================================
 
 This guide assumes you have two server instances, we're using two AussieHQ Dedicated Server Environments (DSE's) (Their fancy name for VMWare vCenter instances), configured as per my [Rails, Ubuntu, Nginx stack guide](http://github.com/ivanvanderbyl/rails-nginx-passenger-ubuntu)
-with the same MySQL root password on both machines.
 
 In this article, I will refer to these servers as having the following private network IPs:
 

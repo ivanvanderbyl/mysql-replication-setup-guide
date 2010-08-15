@@ -1,7 +1,17 @@
 My notes on setting up MySQL database replication on two servers (master/slave)
 ============================
 
-This guide assumes you have two server instances, we're using two AussieHQ Dedicated Server Environments (DSE's) (Their fancy name for VMWare vCenter instances)
+This guide assumes you have two server instances, we're using two AussieHQ Dedicated Server Environments (DSE's) (Their fancy name for VMWare vCenter instances), configured as per my [Rails, Ubuntu, Nginx stack guide](http://github.com/ivanvanderbyl/rails-nginx-passenger-ubuntu)
+with the same MySQL root password on both machines.
 
-Each instance has 6GB RAM and 2 processing cores at 4GHz, configured as per my [Rails stack guide](http://github.com/ivanvanderbyl/rails-nginx-passenger-ubuntu)
+Configuring The Master
+----------------------
 
+Select which machine will run the master database.
+
+So make sure that the replication can work, we must first make MySQL listen on all interfaces.
+
+Edit the my.cnf file and comment out the line bind-address = 127.0.0.1
+
+    sudo vi /etc/mysql/my.cnf
+    

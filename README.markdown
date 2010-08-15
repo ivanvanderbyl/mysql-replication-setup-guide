@@ -6,8 +6,8 @@ with the same MySQL root password on both machines.
 
 In this article, I will refer to these servers as having the following private network IPs:
 
-*server1: 10.0.0.10
-*server2: 10.0.0.20  
+* server1: 10.0.0.10
+* server2: 10.0.0.20  
 
 Configuring The Master
 ----------------------
@@ -147,23 +147,23 @@ and run the following command to make server2 a slave of server1 (it is importan
     CHANGE MASTER TO MASTER_HOST='10.0.0.10', MASTER_USER='slave_user', MASTER_PASSWORD='slave_password', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=4290;
 
 Available options are:
-  MASTER_HOST is the IP address or hostname of the master (in this example it is 192.168.0.100).
-  MASTER_USER is the user we granted replication privileges on the master.
-  MASTER_PASSWORD is the password of MASTER_USER on the master.
-  MASTER_LOG_FILE is the file MySQL gave back when you ran SHOW MASTER STATUS; on the master.
-  MASTER_LOG_POS is the position MySQL gave back when you ran SHOW MASTER STATUS; on the master.
-  MASTER_SSL makes the slave use an SSL connection to the master.
-  MASTER_SSL_CA is the path to the ca-cert.pem file on the slave.
-  MASTER_SSL_CERT is the path to the client-cert.pem file on the slave.
-  MASTER_SSL_KEY is the path to the client-key.pem file on the slave.
+    **MASTER_HOST** is the IP address or hostname of the master (in this example it is 192.168.0.100).
+    **MASTER_USER** is the user we granted replication privileges on the master.
+    **MASTER_PASSWORD** is the password of MASTER_USER on the master.
+    **MASTER_LOG_FILE** is the file MySQL gave back when you ran SHOW MASTER STATUS; on the master.
+    **MASTER_LOG_POS** is the position MySQL gave back when you ran SHOW MASTER STATUS; on the master.
+    **MASTER_SSL** makes the slave use an SSL connection to the master.
+    **MASTER_SSL_CA** is the path to the ca-cert.pem file on the slave.
+    **MASTER_SSL_CERT** is the path to the client-cert.pem file on the slave.
+    **MASTER_SSL_KEY** is the path to the client-key.pem file on the slave.
   
 Finally start the slave:
 
-  START SLAVE;
+    START SLAVE;
 
 Then check the slave status:
 
-  SHOW SLAVE STATUS \G
+    SHOW SLAVE STATUS \G
   
 It is important that both *Slave_IO_Running* and *Slave_SQL_Running* have the value Yes in the output (otherwise something went wrong, and you should check your setup again and take a look at /var/log/syslog to find out about any errors):
 

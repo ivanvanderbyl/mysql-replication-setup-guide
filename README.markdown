@@ -170,7 +170,7 @@ It is important that both *Slave_IO_Running* and *Slave_SQL_Running* have the va
     mysql> SHOW SLAVE STATUS \G
     *************************** 1. row ***************************
                    Slave_IO_State: Waiting for master to send event
-                      Master_Host: 192.168.0.100
+                      Master_Host: 10.0.0.10
                       Master_User: slave_user
                       Master_Port: 3306
                     Connect_Retry: 60

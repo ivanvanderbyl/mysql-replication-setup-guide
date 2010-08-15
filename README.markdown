@@ -14,4 +14,11 @@ So make sure that the replication can work, we must first make MySQL listen on a
 Edit the my.cnf file and comment out the line bind-address = 127.0.0.1
 
     sudo vi /etc/mysql/my.cnf
-    
+
+    [..]
+    #
+    # Instead of skip-networking the default is now to listen only on
+    # localhost which is more compatible and is not less secure.
+    # bind-address    = 127.0.0.1
+    [..]
+

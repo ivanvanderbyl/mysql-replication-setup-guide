@@ -22,3 +22,16 @@ Edit the my.cnf file and comment out the line bind-address = 127.0.0.1
     # bind-address    = 127.0.0.1
     [..]
 
+Restart MySQL afterwards
+
+    sudo restart mysql
+    
+Then check it is bound to all interfaces
+
+    netstat -tap | grep mysql
+
+You should see a line like this:
+    
+    deploy@server1:~$ netstat -tap | grep mysql
+    tcp        0      0 *:mysql                 *:*                     LISTEN      -
+    

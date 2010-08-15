@@ -11,9 +11,9 @@ Select which machine will run the master database.
 
 So make sure that the replication can work, we must first make MySQL listen on all interfaces.
 
-Edit the my.cnf file and comment out the line bind-address = 127.0.0.1
-
     sudo vi /etc/mysql/my.cnf
+
+Edit the my.cnf file and comment out the line bind-address = 127.0.0.1
 
     [..]
     #
